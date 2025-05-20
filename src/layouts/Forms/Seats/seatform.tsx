@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import style from './seatform.module.css'
-import { MovieHall } from '../../../models/moviehall';
-import { MovieHallView } from '../../../models/MovieHallView';
+import style from './seatform.module.css';
 import hallService from '../../../services/hallService';
 import { HallModel } from '../../../models/hall';
 import { Seat } from '../../../models/seat';
@@ -81,7 +79,7 @@ const SeatForm: React.FC = () => {
 
             seatService.deleteSeatsByHallId(Number(id));
 
-            seats.forEach((seat) => {
+            seats.forEach(async (seat) => {
             const formData = new FormData();
 
             formData.append('fila', seat.fila);
@@ -90,7 +88,7 @@ const SeatForm: React.FC = () => {
             formData.append('id_sala', seat.id_sala.toString());
 
             try {
-                const saveSeats =  seatService.saveSeat(formData);
+                await seatService.saveSeat(formData);
                 
             } catch (error) {
                 console.log(error);
@@ -104,7 +102,7 @@ const SeatForm: React.FC = () => {
             
         } else {
 
-            seats.forEach((seat) => {
+            seats.forEach(async (seat) => {
             const formData = new FormData();
 
             formData.append('fila', seat.fila);
@@ -113,7 +111,7 @@ const SeatForm: React.FC = () => {
             formData.append('id_sala', seat.id_sala.toString());
 
             try {
-                const saveSeats =  seatService.saveSeat(formData);
+                await seatService.saveSeat(formData);
                 
             } catch (error) {
                 console.log(error);
