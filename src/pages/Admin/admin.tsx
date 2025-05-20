@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressBook, faChair, faFilm, faPersonBooth } from '@fortawesome/free-solid-svg-icons';
 import style from './admin.module.css'
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const Admin: React.FC = () => {

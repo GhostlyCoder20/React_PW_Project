@@ -4,12 +4,11 @@ import style from './login.module.css';
 import "boxicons/css/boxicons.min.css";
 import loginService from '../../services/loginService';
 import { useState } from 'react';
-import { log } from 'console';
 
 const Login: React.FC = () => {
 
     const [error, setError] = useState('');
-    const [password, SetPassword] = useState('');
+    const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
     const navigate = useNavigate();
 
@@ -55,7 +54,7 @@ const Login: React.FC = () => {
                             <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" className={style.input} />
                         </div>
                         <div className={[style.field, style['input-field']].join(' ')}>
-                            <input value={password} onChange={(e) => SetPassword(e.target.value)} type="password" placeholder="Password" className={style.password} />
+                            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" className={style.password} />
                             <i className={['bx bx-hide', style['eye-icon']].join(' ')}></i>
                         </div>
                         <div className={style["form-link"]}>
