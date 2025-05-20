@@ -148,12 +148,13 @@ const MovieForm: React.FC = () => {
             </div>
         </div>
 
-        <div className={[, style.posstatus].join(' ')}>
+        <div className={[style.posstatus].join(' ')}>
             <div className={style.entryarea}>
-                <p className={style.labelline}>Estado</p>
-                <label>
-                    <input type="checkbox" onChange={handleStatus} checked={estado} />
+
+                <label className={style.labelline} htmlFor="estado">
+                    Estado
                 </label>
+                <input type="checkbox" onChange={handleStatus} checked={estado} />
 
             </div>
         </div>
