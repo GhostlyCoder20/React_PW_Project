@@ -19,11 +19,11 @@ const MovieDetail: React.FC = () => {
 
     const qrRef = useRef<HTMLDivElement>(null);
     const fechaFormateada = hoy.toLocaleDateString('es-ES');
-    const [qrContnet, setQRContent] = useState<string>('');
+    const [qrContnet, setQrContnet] = useState<string>('');
     const { id } = useParams() as { id: string };
     const [movie, setMovie] = useState<MovieModel>();
     const [hall, setHall] = useState<number>(0);
-    const [isModalOpen, setModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [isModalReservationOpen, setIsModalReservationOpen] = useState(false);
     const [isModalQROpen, setIsModalQROpen] = useState(false);
     const [selectedSeats, setSelectedSeats] = useState<SeatDTO[]>([]);
@@ -88,17 +88,10 @@ const MovieDetail: React.FC = () => {
             let saveData = await reservationService.postReservation(reservationData);
 
             selectedSeats.forEach(async (seat) => {
-
-
-
                 const updateSeatReservation = await seatService.updateReservationSeats(seat.id, userdata.id);
-
-
-
-
             });
 
-            setQRContent(JSON.stringify({ 'asientos': selectedSeats, 'salapelicula': movieHall, 'fecha': fechaFormateada }));
+            setQrContnet(JSON.stringify({ 'asientos': selectedSeats, 'salapelicula': movieHall, 'fecha': fechaFormateada }));
 
         } catch (error) {
             console.log(error);
@@ -234,10 +227,10 @@ const MovieDetail: React.FC = () => {
             </div>
 
             <div className={style['movie-detail-cont']}>
-                <button onClick={() => setModalOpen(true)}>Elegir asientos</button>
+                <button onClick={() => setIsModalOpen(true)}>Elegir asientos</button>
             </div>
 
-            <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
                 <div id='container-table'>
                     {generateTable()}
                 </div>
