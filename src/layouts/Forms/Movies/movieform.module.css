@@ -1,0 +1,121 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-movie {
+   display: grid;
+   grid-template-rows: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px;
+   grid-template-columns: [col1] 700px [col2] 500px [col3] 100px [col4] 100px [col5] 100px;
+   gap: 30px
+
+}
+
+.pos-movie-button { 
+    grid-column: 3 / span 2;
+    grid-row: fourth-line / 4;
+}
+
+.posname {
+    grid-column: 1 / span 1;
+    grid-row: first-line / 1;
+}
+
+.posduration {
+    grid-column: 1 / span 1;
+    grid-row: second-line / 2;
+}
+
+.posclasification {
+    grid-column: 1 / span 1;
+    grid-row: third-line / 3;
+}
+
+.possinopsis{ 
+    grid-column: 1 / span 1;
+    grid-row: fourth-line / 4;
+
+}
+
+.posstatus {
+    grid-column: 2 / span 2;
+    grid-row: first-line / 1;
+}
+
+.posimage {
+    grid-column: 2 / span 2;
+    grid-row: second-line / 2;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0;
+}
+
+.container-movieform {
+    width: 680px;
+}
+
+.entryarea {
+    position: relative;
+    height: 80px;
+    line-height: 80px;
+}
+
+.labelstatus{
+    position: relative;
+    width: 20%;
+    height: 20%;
+}
+
+.input-form-s {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+
+.input-form-m {
+    position: absolute;
+    width: 100%;
+    outline: none;
+    font-size: 2.2em;
+    padding: 0 30px;
+    line-height: 80px;
+    border-radius: 10px;
+    border: 2px solid #ffb43a;
+    background: transparent;
+    transition: 0.1s ease;
+    z-index: 1111;
+}
+
+.labelline {
+    position: absolute;
+    font-size: 1.6em;
+    color: #ffb43a;
+    padding: 0 25px;
+    margin: 0 20px;
+    background-color: #282c34;
+    transition: 0.2s ease;
+
+}
+
+.input-form-m:focus, 
+.input-form-m:valid {
+    color: white;
+}
+
+
+.input-form-m:focus + .labelline,
+.input-form-m:valid + .labelline {
+
+    height: 30px;
+    line-height: 30px;
+    transform: translate(-15px, -16px) scale(0.88);
+    z-index: 1111;
+
+}
+

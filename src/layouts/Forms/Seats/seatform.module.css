@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.seat-form-section {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+}
+
+.seat-form-container {
+    max-width: 700px;
+    width: 100%;
+    padding: 25px 30px;
+    border: 5px solid #ffb43a;
+    border-radius: 5px;
+}
+
+
+.seat-form-container .seat-form-title {
+    font-size: 25px;
+    font-weight: 500;
+
+}
+
+.seat-form-container .seat-form-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 12px 0;
+}
+
+.seat-form-form .seat-form-group {
+    margin-bottom: 15px;
+    width: calc(100%/2 - 20px);
+}
+
+.seat-form-form .seats-form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.seat-form-container .seats-form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 12px 0;
+}
+
+.seat-form-form .seat-form-button {
+    width: 49%;
+    height: 40px;
+    margin: 40px 0;
+}
+
+.seat-form-form .generate-seats-button {
+    width: 49%;
+    height: 40px;
+    margin: 40px 0;
+}
+
+
+.seat-form-form .seat-form-button input {
+    width: 100%;
+    height: 90%;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #ffb43a;
+    border: 5px solid #ffb43a;
+    border-radius: 5px;
+
+}
+
+
+.cine-icon {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .cine-icon img {
+    display: block;
+    width: 50px; /* o el tamaño que prefieras */
+    height: auto;
+    color: white;
+  }
+  
+  .cine-icon .number {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* o el color que contraste con la imagen */
+    font-weight: bold;
+    font-size: 9px;
+    pointer-events: none; /* opcional: permite clics a través del número */
+    
+  }

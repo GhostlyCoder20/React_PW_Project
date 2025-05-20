@@ -1,0 +1,112 @@
+.sectionStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background-color: #111;
+}
+
+.card {
+    --color: #08306b;
+    --border-size: 1rem;
+    --bg-color: #252525;
+    position: relative;
+    background-color: var(--bg-color);
+    width: 280px;
+    margin: 2rem;
+    border-radius: var(--border-size);
+    color: white;
+    display: grid;
+    place-content: center;
+    padding: 3rem 2rem;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.card::before,
+.card::after {
+    content: "";
+    position: absolute;
+}
+
+.card::before {
+    width: 200%;
+    height: 200%;
+    background-image: conic-gradient(var(--color) 0deg,
+            transparent 60deg,
+            transparent 180deg,
+            var(--color) 180deg,
+            transparent 240deg);
+    inset: -50%;
+    z-index: -2;
+    animation: border 8s linear infinite;
+}
+
+.card:hover::before {
+    animation-play-state: paused;
+}
+
+@keyframes border {
+    to {
+        transform: rotateZ(-360deg);
+
+    }
+}
+
+.card::after {
+    --inset: 0.25rem;
+    background-color: #111;
+    inset: var(--inset);
+    border-radius: calc(var(--border-size) - var(--inset));
+    z-index: -1;
+    transition: all 0.35s linear;
+}
+
+.card:hover::after {
+    background-color: var(--bg-color);
+}
+
+.card .icon-font {
+    font-size: 4rem;
+    margin-inline: auto;
+    color: transparent;
+    -webkit-text-stroke: thin var(--color);
+}
+
+
+.card:hover .icon-font {
+    color: var(--color);
+    -webkit-text-stroke-width: 0;
+}
+
+.card .title {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    margin-block: 2.5rem 1.5rem;
+    color: var(--color);
+}
+
+.card .detail {
+    line-height: 1.5rem;
+    text-align: center;
+    opacity: 0.75;
+}
+
+.btn-main {
+    padding: 0.5rem 1rem;
+    background-color: var(--color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    margin-top: 1rem;
+}

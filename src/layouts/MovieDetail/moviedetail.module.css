@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.movie-detail-section {
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+}
+
+.movie-detail-reservation {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.movie-detail-img {
+    height: auto;
+    width: 350px;
+    margin-left: 100px;
+    margin-right: 10px;
+}
+
+.movie-reservation-button {
+    display: flex;
+    justify-content: center;
+}
+
+.movie-detail-reservation-img {
+    border-radius: 20px;
+    height: auto;
+    width: 290px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.movie-detail-cont {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.movie-reservation-indic {
+   margin-bottom: 40px;
+}
+
+.movie-reservation-label {
+   margin-bottom: 10px;
+}
+
+.input-form-m {
+    position: absolute;
+    outline: none;
+    background: transparent;
+    padding: 0 30px;
+    border: 2px solid #ffb43a;
+    border-radius: 10px;
+    z-index: 1111;
+    transition: 0.1s;
+    
+}
+
+.input-form-m:focus, 
+.input-form-m:valid {
+    color: white;
+}
+
+.input-form-m:focus + .labelline,
+.input-form-m:valid + .labelline {
+
+    height: 30px;
+    line-height: 30px;
+    transform: translate(-15px, -16px) scale(0.55);
+    z-index: 1111;
+
+}
+
+.labelline {
+    position: absolute;
+    color: #ffb43a;
+    padding: 0 1px;
+    margin: 0 10px;
+    background: #1e1e2a;
+    transition: 0.2s ease;
+
+}
+
+
+.movie-detail-contSinop {
+    padding-bottom: 10px;
+}
+
+.movie-detail-label {
+    margin-right: 10px;
+}
+
+.movie-detail-sinopsis {
+    max-width: 300px;
+    letter-spacing: 1px;
+
+}
+
+.cine-icon {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.cine-icon svg {
+    display: block;
+    width: 50px;
+    /* o el tamaño que prefieras */
+    height: auto;
+    fill:none;
+    stroke-miterlimit:10;
+    stroke-width:1.91px;
+}
+
+.cine-icon .number {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    /* o el color que contraste con la imagen */
+    font-weight: bold;
+    font-size: 9px;
+    pointer-events: none;
+    /* opcional: permite clics a través del número */
+
+}
+
+.svg-active {
+    
+    stroke: greenyellow;
+    stroke-miterlimit:10;
+    stroke-width:1.91px;
+}
+
+.svg-inactive {
+     stroke:#ffb43a;
+    stroke-miterlimit:10;
+    stroke-width:1.91px;
+}
+
+.container-reservation {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+.container-reservationform {
+  margin-bottom: 10px;
+}
+
+.entryarea {
+    position: relative;
+    height: 30px;
+    line-height: 25px;
+}
