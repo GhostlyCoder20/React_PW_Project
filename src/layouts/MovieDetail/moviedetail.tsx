@@ -85,10 +85,10 @@ const MovieDetail: React.FC = () => {
             reservationData.append('total_pago', pago?.toString());
             reservationData.append('id_usuario', userdata.id)
 
-            let saveData = await reservationService.postReservation(reservationData);
+            await reservationService.postReservation(reservationData);
 
             selectedSeats.forEach(async (seat) => {
-                const updateSeatReservation = await seatService.updateReservationSeats(seat.id, userdata.id);
+                await seatService.updateReservationSeats(seat.id, userdata.id);
             });
 
             setQrContnet(JSON.stringify({ 'asientos': selectedSeats, 'salapelicula': movieHall, 'fecha': fechaFormateada }));
@@ -137,13 +137,18 @@ const MovieDetail: React.FC = () => {
         newStates[index] = !newStates[index];
         setEnabledStates(newStates);
 
+         let tempSelecteds: SeatDTO[] = [];
         seats?.some(function (entry, i) {
             if (index === i) {
-                selectedSeats.push(entry);
+               
+                tempSelecteds.push(entry);
+                
                 return true;
             }
             return false;
         });
+
+        setSelectedSeats(tempSelecteds);
     }
 
 
