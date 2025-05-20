@@ -1,17 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import { SwiperSlide, Swiper } from 'swiper/react'
+import React, { useEffect} from 'react'
 import style from './list.module.css'
-import img from '../../assets/home/dune-home-img.jpg'
 import 'swiper/swiper-bundle.css'
 import { MovieModel } from '../../models/Movie'
-import movieService from '../../services/movieService'
-import { url } from 'inspector'
 import { Link } from 'react-router-dom'
 
 
 const List: React.FC<{movies: MovieModel[]}> = ({movies}) => {
 
-  const [images, setImages] = useState<string[]>([]);
+  
 
 
   useEffect(() => { 
