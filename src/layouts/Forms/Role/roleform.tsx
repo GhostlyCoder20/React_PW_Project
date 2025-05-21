@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import style from './roleform.module.css';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import rolService from '../../../services/rolService';
 
 const RoleForm: React.FC = () => {
     const { id } = useParams() as { id: string };
     const [nombre, setNombre] = useState<string>('');
+    const navigate = useNavigate();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -30,6 +31,7 @@ const RoleForm: React.FC = () => {
             try {
                 const addMovieHall = await rolService.postRole(formData);
                 alert(addMovieHall);
+               
             } catch (error) {
                 console.log(error);
                 alert("No se puede añadir el rol")
@@ -38,6 +40,8 @@ const RoleForm: React.FC = () => {
 
 
         }
+
+         navigate('/admin/role');
     }
 
     return (<section className={style['role-form-section']}>

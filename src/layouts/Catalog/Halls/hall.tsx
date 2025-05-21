@@ -28,7 +28,7 @@ const Hall: React.FC = () => {
         e.preventDefault();
 
         try {
-            const deleteMovieHall = movieHallService.deleteMovieHall(id);
+            const deleteMovieHall = await movieHallService.deleteMovieHall(id);
             alert(deleteMovieHall);
             
             loadMovieHalls();

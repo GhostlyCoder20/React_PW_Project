@@ -14,8 +14,8 @@ const seatService = {
         return response.data.data;
     },
 
-    deleteSeatsByHallId:  async (idHall: number): Promise<any> => {
-        const response = await api.delete<Data<any>>(`seat/seats/${idHall}`);
+    deleteSeatsByHallId:  async (idHall: number): Promise<string> => {
+        const response = await api.delete<Data<string>>(`seat/seats/${idHall}`);
         return response.data.data;
     },
 

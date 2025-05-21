@@ -4,7 +4,7 @@ import hallService from '../../../services/hallService';
 import { HallModel } from '../../../models/hall';
 import { Seat } from '../../../models/seat';
 import seatService from '../../../services/seatService';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 
 const alphabet = [
@@ -15,6 +15,7 @@ const alphabet = [
 ];
 
 const SeatForm: React.FC = () => {
+    const navigate = useNavigate();
      const { id } = useParams() as { id: string };
     const [hall, setHall] = useState<number>(0);
     const [halls, setHalls] = useState<HallModel[]>([]);
@@ -77,7 +78,7 @@ const SeatForm: React.FC = () => {
 
         if (id !== undefined) {
 
-            seatService.deleteSeatsByHallId(Number(id));
+             seatService.deleteSeatsByHallId(Number(id));
 
             seats.forEach(async (seat) => {
             const formData = new FormData();
@@ -88,7 +89,12 @@ const SeatForm: React.FC = () => {
             formData.append('id_sala', seat.id_sala.toString());
 
             try {
-                await seatService.saveSeat(formData);
+               let seat = await seatService.saveSeat(formData);
+
+               console.log(seat);
+
+              
+
                 
             } catch (error) {
                 console.log(error);
@@ -97,7 +103,9 @@ const SeatForm: React.FC = () => {
 
         })
             
+         alert('Lo asientos han sido agregaos');
 
+         navigate('/role');
 
             
         } else {

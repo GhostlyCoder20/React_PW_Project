@@ -35,7 +35,7 @@ const Seat: React.FC = () => {
 
 
 
-            const deleteMovie = seatService.deleteSeatsByHallId(id);
+            const deleteMovie = await seatService.deleteSeatsByHallId(id);
             console.log(deleteMovie);
             alert(deleteMovie);
 
